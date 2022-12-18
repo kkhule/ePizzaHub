@@ -1,0 +1,205 @@
+<button type="button" class="btn-close float-right" aria-label="Close" (click)="onClose()"></button>
+<div class="modal-body modal-lg">
+  <div class="row rowpp">
+    <div class="col-lg-12">
+      <div class="modalWrapper">
+        <div>
+          <div class="customiseheader">
+            <div>
+              <h4 class="pizzaname">{{selectedPizza.name}} </h4>
+            </div>
+            <div class="mt-10 "><span class=" inline-flex align-middle">
+                <span *ngIf="selectedPizza.isVeg" class="flex font-light mr-10">
+                  <i title="Vegetarian" class="icon-veg-india mr-7"></i><span
+                    class="typography-6">&nbsp;Vegetarian</span>
+                </span>
+                <span *ngIf="!selectedPizza.isVeg" class="flex font-light mr-10">
+                  <i title="NonVegetarian" class="icon-non-veg-india"></i><span class="typography-6">&nbsp;Non
+                    Vegetarian</span>
+                </span>
+              </span>
+            </div>
+            <div>
+              <span><span>Price &nbsp;&nbsp;</span></span><span>{{pizzaPriceBasedOnCrist | currency:'INR'}}</span>
+            </div>
+
+          </div>
+          <div ngbDropdown class="row">
+            <div class="col-lg-2">
+              <div>
+                Select Crust
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedCrust"
+                  (ngModelChange)="selectedPizzaSize($event)">
+                  <option *ngFor="let size of pizzaSizes$" [ngValue]="size" value="size">{{size.name}}</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row itembody">
+        <div class="col-lg-6">
+          <div>
+            <h5 class=" typography-4 border-b bg-grey-lightest"><span>Ingredients</span></h5>
+          </div>
+          <ul class="">
+            <li class="itemlistwrapper" style="animation-delay: 0s;" *ngFor="let ingredient of pizzaIngredientsItems$">
+              <div class="mt-10 "><span class=" inline-flex align-middle" style="padding-right: 5px;">
+                  <span *ngIf="ingredient.data.isVeg" class="flex font-light mr-10">
+                    <i title="Vegetarian" class="icon-veg-india mr-7"></i>
+                  </span>
+                  <span *ngIf="!ingredient.data.isVeg" class="flex font-light mr-10">
+                    <i title="NonVegetarian" class="icon-non-veg-india"></i>
+                  </span>
+                </span>
+              </div>
+              <input class="form-check-input" type="checkbox" [checked]="ingredient.isSelect"
+                [value]="ingredient.data.id" ngv id="flexCheckChecked" (change)="selectedIngredient($event)">
+              <div class="item-containerWrapper">
+                <div class="item-container">
+                  <div class="typography-6 title-container">
+                    <span>&nbsp;{{ingredient.data.name}}</span>
+                  </div>
+                  <div class="rupees-container">
+                    {{ingredient.data.price | currency:'INR'}}
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <div>
+            <h5 class=" typography-4 border-b bg-grey-lightest"><span>Toppings</span></h5>
+          </div>
+          <ul class="">
+            <li class="itemlistwrapper" style="animation-delay: 0s;" *ngFor="let topping of pizzaToppingsItems$ ">
+              <div class="mt-10 "><span class=" inline-flex align-middle" style="padding-right: 5px;">
+                  <span *ngIf="topping.data.isVeg" class="flex font-light mr-10">
+                    <i title="Vegetarian" class="icon-veg-india mr-7"></i>
+                  </span>
+                  <span *ngIf="!topping.data.isVeg" class="flex font-light mr-10">
+                    <i title="NonVegetarian" class="icon-non-veg-india"></i>
+                  </span>
+                </span>
+              </div>
+              <input class="form-check-input" type="checkbox" [checked]="topping.isSelect" [value]="topping.data.id"
+                id="flexCheckChecked" (change)="selectedTopping($event)">
+              <div class="item-containerWrapper">
+                <div class="item-container">
+
+                  <div class="typography-6 title-container">
+                    <span>&nbsp;{{topping.data.name}}</span>
+                  </div>
+                  <div class="rupees-container">
+                    {{topping.data.price | currency:'INR'}}
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="row itembody">
+        <div class="col-lg-6">
+          <div>
+            <h5 class=" typography-4 border-b bg-grey-lightest"><span>Sauces</span></h5>
+          </div>
+          <ul class="">
+            <li class="itemlistwrapper" style="animation-delay: 0s;" *ngFor="let sauce of pizzaSaucesItems$">
+              <input class="form-check-input" type="checkbox" [checked]="sauce.isSelect" [value]="sauce.data.id"
+                id="flexCheckChecked" (change)="selectedSauces($event)">
+              <div class="item-containerWrapper">
+                <div class="item-container">
+                  <div class="typography-6 title-container">
+                    <span>&nbsp; {{sauce.data.name}}</span>
+                  </div>
+                  <div class="rupees-container">
+                    {{sauce.data.price | currency:'INR'}}
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <div>
+            <h5 class=" typography-4 border-b bg-grey-lightest"><span>Beverages and Desserts</span></h5>
+          </div>
+          <ul class="">
+            <li class="itemlistwrapper" style="animation-delay: 0s;" *ngFor="let nonPizza of nonPizzasItems$">
+              <input class="form-check-input" type="checkbox" [checked]="nonPizza.isSelect" [value]="nonPizza.data.id"
+                id="flexCheckChecked" (change)="selectedNonPizzaItem($event)">
+              <div class="item-containerWrapper">
+                <div class="item-container">
+                  <div class="typography-6 title-container">
+                    <span>&nbsp;{{nonPizza.data.name}}</span>
+                  </div>
+                  <div class="rupees-container">
+                    {{nonPizza.data.price | currency:'INR'}}
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+      <div class="row">
+        <div class="" style="background-color: #e9ebee;">
+
+          <ul class="quantityWrapper">
+            <li class="itemlistwrapper" style="animation-delay: 0s;">
+              <div class="item-containerWrapper">
+                <div class="item-container">
+                  <div class="typography-6 title-container">
+                    <span>&nbsp;Quantity</span>
+                  </div>
+                  <div class="rupees-container">
+                    <select class="form-select" aria-label="Default select example" #quantity
+                      (change)="selectedQuntityofPizza(quantity.value)">
+                      <option *ngFor="let qty of NoOfQuantity">{{qty}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+
+  <div class="row">
+    <div class="bg-green">
+      <div>
+        <h5 class=" typography-4 border-b "><span>Total Price</span><span class="rupees-container">
+            ₹ {{totalPizzaPrice}}
+          </span></h5>
+
+      </div>
+
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-dark" (click)="onCheckout()">Checkout</button>
+</div>
+
+<hr />

@@ -1,0 +1,33 @@
+.ordersummary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion {
+    margin-top: 10px;
+}
+
+.accordion-collapse.collapse.show {
+    border: solid #dee2e6;
+    border-width: 1px 0;
+    background-color: #f6f9fa;
+}
+
+.sectionorder {
+    text-align: left;
+    background-color: #eee;
+    padding: 0.5rem;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.wrappersection {
+    text-align: left;
+    font-size: 13px;
+    margin: 8px;
+}
+
+.liwrapper {
+    list-style: circle;
+
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Pesto",
+    "Description": "",
+    "Price": 5.0
+  },
+  {
+    "Id": 2,
+    "Name": "Garlic Ranch Sauce",
+    "Description": "",
+    "Price": 8.0
+  },
+  {
+    "Id": 3,
+    "Name": "Marinara Sauce",
+    "Description": "",
+    "Price": 10.0
+  },
+  {
+    "Id": 4,
+    "Name": "Tomato Sauce",
+    "Description": "",
+    "Price": 6.0
+  }
+]

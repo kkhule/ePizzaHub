@@ -1,0 +1,14 @@
+.headerWrappersection {
+    background-color: #eee;
+    border: 1px solid darkgray;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.orderbtn {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}

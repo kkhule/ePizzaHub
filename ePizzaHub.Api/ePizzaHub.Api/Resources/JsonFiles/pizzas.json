@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "Name": "Margherita",
+    "Price": 289.0,
+    "SizeId": 1,
+    "IsVeg": true,
+    "ImageUrl": "images/margherita.jpg",
+    "Description": "Cheese, Onion",
+    "SepcialStatus": "Most Popular",
+    "IngredientIds": [
+      1,
+      3
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Tandoori Paneer",
+    "Price": 539.0,
+    "SizeId": 1,
+    "IsVeg": true,
+    "ImageUrl": "images/tandoori-paneer.jpg",
+    "Description": "Spiced paneer, Onion, Green Capsicum & Red Paprika in Tandoori Sauce",
+    "SepcialStatus": "Most Popular",
+    "IngredientIds": [
+      2,
+      3,
+      4,
+      11
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Veggie Supreme",
+    "Price": 609.0,
+    "SizeId": 1,
+    "IsVeg": true,
+    "ImageUrl": "images/veggie-supreme.jpg",
+    "Description": "Black Olives, Green Capsicum, Mushroom, Onion, Red Paprika, Sweet Corn",
+    "SepcialStatus": "New",
+    "IngredientIds": [
+      5,
+      4,
+      6,
+      3,
+      11,
+      7
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Veg Kebab Surprise",
+    "Price": 609.0,
+    "SizeId": 1,
+    "IsVeg": true,
+    "ImageUrl": "images/veg-kebab-surprise.jpg",
+    "Description": "Veg Kebab, Onion, Green Capsicum, Tomato & Sweet Corn in Tandoori Sauce",
+    "SepcialStatus": "New",
+    "IngredientIds": [
+      9,
+      3,
+      4,
+      10,
+      7
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Chicken Supreme",
+    "Price": 689.0,
+    "SizeId": 1,
+    "IsVeg": false,
+    "ImageUrl": "images/chicken-supreme.jpg",
+    "Description": "Herbed Chicken, Schezwan Chicken Meatball, Chicken Tikka",
+    "SepcialStatus": "Most Popular",
+    "IngredientIds": [
+      12,
+      13,
+      14
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Chicken Tikka Supreme",
+    "Price": 689.0,
+    "SizeId": 1,
+    "IsVeg": false,
+    "ImageUrl": "images/chicken-tikka-supreme.jpg",
+    "Description": "A divine combination of delicious Chicken Tikka & Malai Chicken Tikka, Onion, spicy Red Paprika with flavourful pan sauce and 100% mozzarella cheese.",
+    "SepcialStatus": "New",
+    "IngredientIds": [
+      14,
+      15,
+      3,
+      11
+    ]
+  }
+]

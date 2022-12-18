@@ -1,0 +1,28 @@
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+  <div class="col" *ngFor="let pizza of pizzasData$">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <img src={{pizza.imageUrl}} />
+      </div>
+      <div class="card-body">
+        <div class="typography-4 list-item__name flex-1 px-10 pt-10">{{pizza.name}} <span
+            class="ml-2">&nbsp;</span><span class=" inline-flex align-middle"><span class="flex font-light mr-5">
+              <i *ngIf="pizza.isVeg" title="Vegetarian" class="icon-veg-india"
+                style="height: 18px; width: 18px; background-size: contain;"></i>
+              <i *ngIf="!pizza.isVeg" title="NonVegetarian" class="icon-non-veg-india"
+                style="height: 18px; width: 18px; background-size: contain;"></i>
+            </span></span>
+        </div>
+        <p class="typography-6 list-item__desc flex-1 ">{{pizza.description}}</p>
+        <button class="button button--md button--green flex-1 font-semibold"
+          (click)="selectedPizza(pizza.id)"><span><span>Customise &nbsp;</span></span><span class="w-auto ml-3">
+            {{pizza.price | currency:'INR'}}</span> </button>
+      </div>
+      <div class="flag">
+        <div class="flag__inner"><span>{{pizza.sepcialStatus}}</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Name": "Small",
+    "Multiplier": 1.0
+  },
+  {
+    "Id": 2,
+    "Name": "Medium",
+    "Multiplier": 1.25
+  },
+  {
+    "Id": 3,
+    "Name": "Large",
+    "Multiplier": 1.5
+  }
+]

@@ -1,0 +1,12 @@
+<button type="button" class="btn-close float-right" aria-label="Close" (click)="onClose()"></button>
+<nav class="navbar navbar-light bg-light">
+	<a class="navbar-brand" mb-0 h1 style="font-weight: bold; padding-left: 10px;">Order Summary</a>
+</nav>
+<div>
+	<app-pizza-order-summary [myOrders$]="mySummaryOrders" [isOrderConfirmation]="true"> </app-pizza-order-summary>
+</div>
+
+<div class="orderbtn">
+	<!-- <button class="btn btn-primary" ng-hide="true" type="button"  (click)= "editOrder()" >Edit</button> -->
+	<button class="btn btn-primary" type="button" (click)="placeOrder()">Place Order</button>
+</div>

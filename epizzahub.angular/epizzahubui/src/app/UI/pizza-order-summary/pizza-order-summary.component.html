@@ -1,0 +1,77 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col col-lg-12">
+      <div class="accordion" id="accordionExample">
+
+
+        <div class="accordion-item" *ngFor="let order of myOrders$">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#order'+order.id" aria-expanded="true" [attr.aria-controls]="'order'+order.id">
+              {{ order.id? order.id : 'New'}}
+            </button>
+          </h2>
+          <div id="{{ 'order'+order.id}}" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="ordersummary">
+                <div>Name: <strong>{{order.pizza.name}}</strong></div>
+                <div>Date: <strong>{{order.orderDate | date:'shortDate'}}</strong></div>
+              </div>
+              <div class="ordersummary">
+                <div>Total Price: <span class="badge text-bg-success">{{order.totalPrice | currency:'INR'}}</span></div>
+                <div>Quantity: <span class="badge bg-primary rounded-pill">{{order.numberOfPizza}}</span></div>
+              </div>
+              <hr />
+              <div>
+                <ol class="list-group">
+                  <li class="list-group-item  align-items-start">
+                    <div class="" *ngIf="order.pizzaToppings?.length">
+                      <div class="sectionorder">Topping</div>
+                      <div class="wrappersection">
+                        <ol>
+                          <li class="row liwrapper" *ngFor="let topping of order.pizzaToppings">
+                            <div class="col-4">{{topping.name}}</div>
+                            <div class="col-4"><span><strong>{{topping.price | currency:'INR'}}</strong></span></div>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+
+                    <div class="" *ngIf="order.pizzaSauces?.length">
+                      <div class="sectionorder">Sauces</div>
+                      <div class="wrappersection">
+                        <ol>
+                          <li class="row liwrapper" *ngFor="let sauce of order.pizzaSauces">
+                            <div class="col-4">{{sauce.name}} </div>
+                            <div class="col-4"><span><strong>{{sauce.price | currency:'INR'}}</strong></span></div>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+
+                    <div class="" *ngIf="order.nonPizzas?.length">
+                      <div class="sectionorder">Beverages and Desserts</div>
+                      <div class="wrappersection">
+                        <ol>
+                          <li class="row liwrapper" *ngFor="let nonPizza of order.nonPizzas">
+                            <div class="col-4">{{nonPizza.name}} </div>
+                            <div class="col-4"><span><strong>{{nonPizza.price | currency:'INR'}}</strong></span></div>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+
+                  </li>
+
+                </ol>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>

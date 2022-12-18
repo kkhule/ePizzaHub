@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Pepsi",
+    "Description": "Contains Caffeine",
+    "Price": 57.0
+  },
+  {
+    "Id": 2,
+    "Name": "Mirinda",
+    "Description": "Contains Caffeine",
+    "Price": 57.0
+  },
+  {
+    "Id": 3,
+    "Name": "Choco Volcano Cake",
+    "Description": "Choco Delight With A Gooey Chocolate Volcano Centre",
+    "Price": 119.0
+  },
+  {
+    "Id": 4,
+    "Name": "Choco Sundae",
+    "Description": "Choco Sundae Cup (100 ml)",
+    "Price": 29.0
+  }
+]
